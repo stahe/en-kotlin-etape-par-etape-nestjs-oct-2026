@@ -797,8 +797,8 @@
 
 <h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
 <p>The PDF in the document is <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQB8VCqzAB2-R77S6TSwjnu6AeGoKT3KNelb0GVRBO4WWSo?e=k5DheA"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
-<p>The code in this document is <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQA-ItH7duN5TawGkgT7GCDOAYecYsT_1i7v2XiQS-yeFlA?e=X9wH15"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
-<p>This document is a product of Anthropic’s Claude IA. It adapts the course <a href="https://stahe.github.io/en-flutter-etape-par-etape-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the Flutter Mobile Framework</span></u></a>”—including its outline, 25 examples, server, and case study—and changes the tool used:</p>
+<p>The code in this document is <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQDqSpJwmX56SZhnStls6CWCAQzItM-mpkFtkPTvCOF3OII"><u><span style="color: #0563c1">HERE</span></u></a>.</p>
+<p>This document is a product of Anthropic’s Claude AI. It adapts the course <a href="https://stahe.github.io/en-flutter-etape-par-etape-sept-2026/"><u><span style="color: #0563c1">“Step-by-Step Introduction to the Flutter Mobile Framework</span></u></a>”—including its outline, 25 examples, server, and case study—and changes the tool used:</p>
 <ul>
 <li>In the course <em>[Flutter]</em>, the application is written in <em>[Dart]</em>, using a framework that draws every pixel on the screen itself, and the same code produces a <em>[Android]</em> application, <em>[iOS],</em> or web;</li>
 <li>In this course, the app is a <em>[Android]</em> NATIVE app, written in <em>[Kotlin]</em> (the language recommended by Google for Android since 2019), using <em>[Jetpack Compose]</em>, Android’s declarative UI library.</li>
@@ -812,13 +812,13 @@
 <p>The application has two parts, which communicate with each other only through HTTP requests:</p>
 <p><img src="images/1000000000000AF000000348E62EC0EF.png" width="605" height="181" style="width:16cm;height:4.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000AF000000348E62EC0EF.png" /></p>
 <ul>
-<li>1: The <em>[Android]</em> application, running on the phone, sends a HTTP request to the server, for example, [GET /api/agenda?idMedecin=1&amp;jour=2026-10-05];</li>
+<li>1: The <em>[Android]</em> application, running on the phone, sends a HTTP request to the server, for example, [GET /api/schedule?doctorId=1&amp;day=2026-10-05];</li>
 <li>2: The server responds with data JSON: this doctor’s schedule for that day. It does not generate any pages;</li>
 <li>3: Using this data, <em>[Compose]</em> updates the phone’s screen.</li>
 </ul>
 <p>This is exactly the architecture of the clients <em>[React]</em>, <em>[Vue.js]</em>, <em>[Angular]</em>, and <em>[Flutter]</em>: the only difference is what generates the display. <em>[Jetpack Compose]</em> is based on the same concepts as <em>[React]</em> and <em>[Flutter]</em>:</p>
 <ul>
-<li>the screen is described by FONCTIONS: an annotated function [@Composable] describes a part of the interface (text, a button, a column, an entire screen) by calling other functions [@Composable]. They form a tree;</li>
+<li>the screen is described by FUNCTIONS: an annotated function [@Composable] describes a part of the interface (text, a button, a column, an entire screen) by calling other functions [@Composable]. They form a tree;</li>
 <li>the interface is a function of state: when an observed piece of data changes (a “state,” [mutableStateOf]), <em>[Compose]</em> re-executes the functions that read it—this is RECOMPOSITION—and updates the screen. We never write code that modifies the screen: we describe the screen as a function of the state;</li>
 <li>a modern language, <em>[Kotlin]</em>, compiled for the virtual machine of <em>[Android]</em>: its lambdas, extension functions, and coroutines make this style of writing natural.</li>
 </ul>
@@ -830,7 +830,7 @@
 <li><em>[Android Studio]</em> (Quail version 2026.1), Google’s development environment: editor, SDK <em>[Android]</em>, emulator. It includes its own JDK ([JBR] 25), which is used for <em>[Gradle]</em>;</li>
 <li><em>[Gradle]</em> 9.6 and the <em>[Android]</em> (AGP) 9.4 plugin, which compile the application. The <em>[Android]</em> 9 plugin itself includes support for <em>[Kotlin]</em> 2.2;</li>
 <li>a <em>[Android]</em> emulator (a Pixel 8, <em>[Android]</em> 17, API 37) or a real <em>[Android]</em> phone connected to the computer;</li>
-<li>the SGBD <em>[MySQL]</em> (or <em>[MariaDB]</em>), for example, the one for <em>[Laragon]</em> under <em>[Windows]</em>, and <em>[Node.js]</em>: these are required for the JSON server, starting from the chapter that introduces it;</li>
+<li>the DBMS [MySQL] (or <em>[MariaDB]</em>), for example, the one for <em>[Laragon]</em> under <em>[Windows]</em>, and <em>[Node.js]</em>: these are required for the JSON server, starting from the chapter that introduces it;</li>
 <li>the command-line tool <em>[curl]</em>, which displays the raw HTTP responses.</li>
 </ul>
 <p>The libraries used are declared in the [gradle/libs.versions.toml] file for each project: &quot;BOM,&quot; <em>[Compose]</em> 2026.02 (Material 3), <em>[Navigation Compose]</em> 2.9, <em>[Lifecycle]</em> 2.9 (ViewModel), <em>[DataStore]</em> 1.1, <em>[AppCompat]</em> 1.7, <em>[OkHttp]</em> 4.12, <em>[kotlinx.serialization]</em> 1.9, <em>[AndroidSVG]</em> 1.4.</p>
@@ -842,11 +842,11 @@
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>kotlin-etape-par-etape-oct-2026/
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── exemples_kotlin/          les 25 petits exemples (un seul projet Android Studio)
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── rdvmedecins-nestjs-json/  le serveur JSON RdvMedecins (la « boîte noire »)
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>└── rdvmedecins_kotlin/       le client Android de l'étude de cas
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── examples_kotlin/          the 25 small examples (a single Android Studio project)
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── rdvmedecins-nestjs-json/  the RdvMedecins JSON server (the "black box")
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>└── rdvmedecins_kotlin/       the Android client of the case study
 </code></pre></div></td></tr></table></div>
-<p>The examples form a single project, <em>[Android Studio]</em>, and a single application, <em>[Android]</em>: Each example is a ACTIVITÉ (a screen), stored in its own package ([fr.stahe.exemples.ex01], [fr.stahe.exemples.ex02]...), and a menu—the startup activity—allows you to launch them all:</p>
+<p>The examples form a single project, <em>[Android Studio]</em>, and a single application, <em>[Android]</em>: Each example is an ACTIVITY (a screen), stored in its own package ([fr.stahe.examples.ex01], [fr.stahe.examples.ex02]...), and a menu—the startup activity—allows you to launch them all:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -864,38 +864,38 @@
 <span class="normal"><a href="#__codelineno-1-15">15</a></span>
 <span class="normal"><a href="#__codelineno-1-16">16</a></span>
 <span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>exemples_kotlin/
+<span class="normal"><a href="#__codelineno-1-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>examples_kotlin/
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>├── app/
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>│   ├── build.gradle.kts            la configuration de l'application
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>│   ├── build.gradle.kts            the configuration of the application
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a>│   └── src/
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a>│       ├── main/
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>│       │   ├── AndroidManifest.xml les activités de l'application
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>│       │   ├── assets/             des fichiers livrés avec l'application (exemple 25)
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>│       │   ├── java/fr/stahe/exemples/
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>│       │   │   ├── MainActivity.kt le menu des 25 exemples
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>│       │   │   ├── commun/         du code partagé par les exemples
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>│       │   │   ├── ex01/           l'exemple 01 : Ex01Activity.kt
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>│       │   ├── AndroidManifest.xml the activities of the application
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>│       │   ├── assets/             files shipped with the application (example 25)
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>│       │   ├── java/fr/stahe/examples/
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>│       │   │   ├── MainActivity.kt the menu of the 25 examples
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>│       │   │   ├── common/         code shared by the examples
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>│       │   │   ├── ex01/           example 01: Ex01Activity.kt
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a>│       │   │   ├── ...
 <a id="__codelineno-1-13" name="__codelineno-1-13"></a>│       │   │   └── ex25/
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>│       │   └── res/                les ressources : textes, images, icônes
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>│       └── androidTest/            la fabrication des copies d'écran
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>├── gradle/libs.versions.toml       les versions des bibliothèques
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>│       │   └── res/                the resources: texts, images, icons
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>│       └── androidTest/            the making of the screenshots
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>├── gradle/libs.versions.toml       the versions of the libraries
 <a id="__codelineno-1-17" name="__codelineno-1-17"></a>├── build.gradle.kts, settings.gradle.kts
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>└── gradlew, gradlew.bat            le lanceur de Gradle
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>└── gradlew, gradlew.bat            the Gradle launcher
 </code></pre></div></td></tr></table></div>
-<p>Open the [exemples_kotlin] folder within <em>[Android Studio]</em> ([File / Open]); <em>[Gradle]</em> will then download the libraries. Launch the application using the [Run] button (the green triangle): the menu appears, and each line opens an example. You can also launch an example directly from a console using the [adb] tool from SDK <em>[Android]</em>:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>adb shell am start -n fr.stahe.exemples/.ex05.Ex05Activity
+<p>Open the [examples_kotlin] folder within <em>[Android Studio]</em> ([File / Open]); <em>[Gradle]</em> will then download the libraries. Launch the application using the [Run] button (the green triangle): the menu appears, and each line opens an example. You can also launch an example directly from a console using the [adb] tool from SDK <em>[Android]</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>adb shell am start -n fr.stahe.examples/.ex05.Ex05Activity
 </code></pre></div></td></tr></table></div>
 <p>Examples 22 through 25 query the JSON <em>[RdvMedecins]</em> server: you will need to have it installed and running, as explained in the chapter dedicated to it.</p>
 <h2 id="15-document-contents">1.5. <span style="color: #2e74b5">Document Contents</span></h2>
 <ul>
-<li>Getting Started (Examples 01 through 09): an activity, the [@Composable] functions, the report ([remember], [mutableStateOf]), events, input fields, a reducer, validation, a reusable form, formatting;</li>
+<li>Getting Started (Examples 01 through 09): an activity, the [@Composable] functions, the state ([remember], [mutableStateOf]), events, input fields, a reducer, validation, a reusable form, formatting;</li>
 <li>Components (10 through 16): parameters, functions with parameters, composition (content within parameters), lifecycle and effects, [CompositionLocal], reusable behaviors (animations, [remember...] functions), confirmation window;</li>
 <li>Navigation (17 and 18): <em>[Navigation Compose]</em>, typed routes, parameters, deep links, guards;</li>
-<li>Asynchronous Operations and Shared State (19 and 20): coroutines, [Flow], anti-bounce, expired responses, [ViewModel], <em>[DataStore]</em>;</li>
+<li>Asynchronous Operations and Shared State (19 and 20): coroutines, [Flow], debounce, expired responses, [ViewModel], <em>[DataStore]</em>;</li>
 <li>Internationalization (21): resources [strings.xml], plurals, application language;</li>
-<li>The Server, a Black Box: server installation JSON, server configuration API, examples <em>[curl]</em>;</li>
-<li>Communicating with the Server (22–25): <em>[OkHttp]</em>, the server address, the token cookie, an access layer to API, a view template, server errors;</li>
+<li>The Server, a Black Box: installing the JSON server, its API, [curl] examples;</li>
+<li>Communicating with the Server (22–25): <em>[OkHttp]</em>, the server address, the token cookie, an access layer to API, a view model, server errors;</li>
 <li>Case Study: The <em>[Android]</em> client for the <em>[RdvMedecins]</em> application;</li>
 <li>Deployment: the signed application (APK), the production server.</li>
 </ul>

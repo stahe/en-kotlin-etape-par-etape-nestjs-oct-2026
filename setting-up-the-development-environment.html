@@ -802,7 +802,7 @@
 <li>[installDebug]: compiles the application (debug version) and installs it on the connected device. [assembleDebug] compiles it only, in [app/build/outputs/apk/debug/app-debug.apk].</li>
 </ul>
 <h2 id="22-set-up-an-android-emulator">2.2. <span style="color: #2e74b5">Set up an Android emulator</span></h2>
-<p>If you don&#x27;t have a phone, you can test the app on an emulator: a virtual phone that runs in a window on your computer. Prerequisites: Virtualization must be enabled in BIOS, and under <em>[Windows]</em>, the [Plateforme de l&#x27;hyperviseur Windows] feature must be checked. Create the virtual device in [Device Manager] ([Tools / Device Manager]): [Create Device], a template (for example, [Pixel 8]), and a recent system image for the [x86_64] and [Finish] processors.</p>
+<p>If you don&#x27;t have a phone, you can test the app on an emulator: a virtual phone that runs in a window on your computer. Prerequisites: Virtualization must be enabled in BIOS, and under <em>[Windows]</em>, the [Windows Hypervisor Platform] feature must be checked. Create the virtual device in [Device Manager] ([Tools / Device Manager]): [Create Device], a template (for example, [Pixel 8]), and a recent system image for the [x86_64] processor, and [Finish].</p>
 <p><img src="images/100000000000046D00000328B20C690A.png" width="491" height="350" style="width:13cm;height:9.271cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046D00000328B20C690A.png" /></p>
 <p>The [Play] button on the [Device Manager] launches the emulator. We then verify that [adb] (the tool that connects the computer to the device, in [%LOCALAPPDATA%\Android\Sdk\platform-tools]) detects it:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -815,14 +815,14 @@
 <h2 id="23-prepare-the-android-phone">2.3. <span style="color: #2e74b5">Prepare the Android phone</span></h2>
 <p>To run the app on a real phone, the phone must be set to allow control from the computer:</p>
 <ul>
-<li>enable developer options: [Paramètres / À propos du téléphone], tap [Numéro de build] seven times;</li>
-<li>enable [Débogage USB] in [Options pour les développeurs];</li>
+<li>enable developer options: [Settings / About phone], tap [Build number] seven times;</li>
+<li>enable [USB debugging] in [Developer options];</li>
 <li>Connect the phone using a USB cable that transfers data, and accept the authorization request on the phone;</li>
 <li>verify that [adb devices] displays the phone.</li>
 </ul>
 <p>In <em>[Android Studio]</em>, the device drop-down list next to the [Run] button will then display the emulator and the phone.</p>
 <h2 id="24-create-a-project">2.4. <span style="color: #2e74b5">Create a project</span></h2>
-<p>A project named <em>[Compose]</em> is created in <em>[Android Studio]</em> by [File / New / New Project], using the [Empty Activity] template: a name ([Name]), an application ID ([Package name], for example [fr.stahe.exemples], written backward like a domain name: two applications installed on the same phone must have different IDs), and the configuration language [Kotlin DSL]. The wizard generates a complete, ready-to-run app. The sample project was created this way and then completed manually; its configuration files are shown in Example 01.</p>
+<p>A project named <em>[Compose]</em> is created in <em>[Android Studio]</em> by [File / New / New Project], using the [Empty Activity] template: a name ([Name]), an application ID ([Package name], for example [fr.stahe.examples], written backward like a domain name: two applications installed on the same phone must have different IDs), and the configuration language [Kotlin DSL]. The wizard generates a complete, ready-to-run app. The sample project was created this way and then completed manually; its configuration files are shown in Example 01.</p>
 
 
 

@@ -794,19 +794,19 @@
 
 
 <h1 id="14-appendices">14. <span style="color: #2e74b5">Appendices</span></h1>
-<p>The installation of <em>[Android Studio]</em>, the emulator, and the setup of a phone are described in the chapter “Setting Up the Work Environment.” These appendices supplement that chapter.</p>
+<p>The installation of <em>[Android Studio]</em>, the emulator, and the setup of a phone are described in the chapter “Setting Up the Development Environment.” These appendices supplement that chapter.</p>
 <h2 id="141-using-android-studio">14.1. <span style="color: #2e74b5">Using Android Studio</span></h2>
 <ul>
-<li>[File / Open]: open a project ([exemples_kotlin], [rdvmedecins_kotlin]); <em>[Gradle]</em> “syncs” it (downloads the libraries);</li>
+<li>[File / Open]: open a project ([examples_kotlin], [rdvmedecins_kotlin]); <em>[Gradle]</em> “syncs” it (downloads the libraries);</li>
 <li>the [Run] button (or Shift-F10) installs and launches the app on the device selected in the toolbar; [Debug] (Shift-F9) launches it with the debugger (breakpoints, variables);</li>
 <li>[Apply Changes] replaces the code of a running application without restarting it, when possible;</li>
 <li>the annotation [@Preview] on a parameterless function [@Composable] displays it in the editor, without an emulator;</li>
 <li>the “Layout Inspector” ([Tools / Layout Inspector]) displays the component tree for the current screen and the number of recompositions for each component; “App Inspection” displays network requests (<em>[OkHttp]</em>) and databases;</li>
 <li>Pressing Alt-Enter on an error suggests corrections (add a [import]...); Ctrl-Alt-L reformats the file;</li>
-<li>Command line: [adb devices] (connected devices), [adb reverse tcp:8080 tcp:8080] (port 8080 on the device connected to the computer’s port), [adb install fichier.apk] (install an app), [adb logcat] (the phone log; in <em>[Android Studio]</em>, the [Logcat] window), [emulator -list-avds], then [emulator -avd Pixel_8] (launch an emulator without <em>[Android Studio]</em>).</li>
+<li>Command line: [adb devices] (connected devices), [adb reverse tcp:8080 tcp:8080] (port 8080 on the device connected to the computer’s port), [adb install file.apk] (install an app), [adb logcat] (the phone log; in <em>[Android Studio]</em>, the [Logcat] window), [emulator -list-avds], then [emulator -avd Pixel_8] (launch an emulator without <em>[Android Studio]</em>).</li>
 </ul>
 <h2 id="142-screenshots-from-this-document">14.2. <span style="color: #2e74b5">Screenshots from this document</span></h2>
-<p>The screenshots were generated automatically by INSTRUMENTÉS tests: <em>[JUnit]</em> tests that run SUR the emulator—within the same process as the application—and control it via the <em>[Compose]</em> test library (find a component by its text, tap it, type into it, etc.). They are located in the [app/src/androidTest] folders of the two projects: [Captures.kt] (a test function, for example) and [CapturesCas.kt] (a complete walkthrough of the application). An excerpt:</p>
+<p>The screenshots were generated automatically by INSTRUMENTED tests: <em>[JUnit]</em> tests that run ON the emulator—within the same process as the application—and control it via the <em>[Compose]</em> test library (find a component by its text, tap it, type into it, etc.). They are located in the [app/src/androidTest] folders of the two projects: [Captures.kt] (one test function per example) and [CaseStudyCaptures.kt] (a complete walkthrough of the application). An excerpt:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -824,24 +824,24 @@
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">    </span><span class="nd">@Test</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">parcours</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">langueFr</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">walkthrough</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">languageEn</span><span class="p">()</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">ActivityScenario</span><span class="p">.</span><span class="na">launch</span><span class="p">(</span><span class="n">MainActivity</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">pause</span><span class="p">(</span><span class="m">3000</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">seDeconnecter</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">logOut</span><span class="p">()</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">         </span><span class="c1">// ---- the connection</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="c1">// ---- the login</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="n">pause</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">capturer</span><span class="p">(</span><span class="s">"cas-01"</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">saisir</span><span class="p">(</span><span class="s">"Login"</span><span class="p">,</span><span class="w"> </span><span class="s">"admin"</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">saisir</span><span class="p">(</span><span class="s">"Mot de passe"</span><span class="p">,</span><span class="w"> </span><span class="s">"erreur"</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">saisir</span><span class="p">(</span><span class="s">"Recopiez les caractères de l'image"</span><span class="p">,</span><span class="w"> </span><span class="s">"test"</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="n">bouton</span><span class="p">(</span><span class="s">"Se connecter"</span><span class="p">).</span><span class="na">performClick</span><span class="p">()</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="n">attendre</span><span class="p">(</span><span class="s">"incorrect"</span><span class="p">,</span><span class="w"> </span><span class="n">sousChaine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">capture</span><span class="p">(</span><span class="s">"case-01"</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="n">typeIn</span><span class="p">(</span><span class="s">"Login"</span><span class="p">,</span><span class="w"> </span><span class="s">"admin"</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="n">typeIn</span><span class="p">(</span><span class="s">"Password"</span><span class="p">,</span><span class="w"> </span><span class="s">"wrong"</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="n">typeIn</span><span class="p">(</span><span class="s">"Type the characters shown in the image"</span><span class="p">,</span><span class="w"> </span><span class="s">"test"</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="n">button</span><span class="p">(</span><span class="s">"Log in"</span><span class="p">).</span><span class="na">performClick</span><span class="p">()</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="n">waitFor</span><span class="p">(</span><span class="s">"Incorrect"</span><span class="p">,</span><span class="w"> </span><span class="n">substring</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="n">pause</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="n">capturer</span><span class="p">(</span><span class="s">"cas-02"</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="n">capture</span><span class="p">(</span><span class="s">"case-02"</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>The scripts [outils/captures_exemples.bat] and [outils/captures_etude_de_cas.bat] launch the emulator if necessary, compile and install the application and its tests, set up the emulator (language, status bar in “demo mode”), run the tests ([adb shell am instrument]), and then retrieve the images. The JSON server must be started, along with [CAPTCHA_TEST=test].</p>
+<p>The scripts [tools/captures_examples.bat] and [tools/captures_case_study.bat] launch the emulator if necessary, compile and install the application and its tests, set up the emulator (language, status bar in “demo mode”), run the tests ([adb shell am instrument]), and then retrieve the images. The JSON server must be started, along with [CAPTCHA_TEST=test].</p>
 <h2 id="143-installing-nodejs">14.3. <span style="color: #2e74b5">Installing Node.js</span></h2>
 <p><em>[Node.js]</em> downloads to <a href="https://nodejs.org/"><u><span style="color: #0563c1">nodejs.org</span></u></a>: select version LTS (long-term support). The <em>[Windows]</em> installer also installs <em>[npm]</em>. It is only required for the JSON server. Verify the installation in a console:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -860,7 +860,7 @@
 <p><em>[curl]</em> is included with <em>[Windows]</em> versions 10 and 11, <em>[macOS],</em> and most distributions of <em>[Linux]</em>. Check its version:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>curl --version
 </code></pre></div></td></tr></table></div>
-<p>The option <em>[--json]</em>, used in this document, has been available since version 7.82 (2022). If you are using an older version, replace <strong><em>[--json @fichier]</em></strong> with <strong><em>[-H &quot;Content-Type: application/json&quot; -d @fichier]</em></strong>, or install a recent version starting with <a href="https://curl.se/"><u><span style="color: #0563c1">curl.se</span></u></a>.</p>
+<p>The option <em>[--json]</em>, used in this document, has been available since version 7.82 (2022). If you are using an older version, replace [--json @file] with [-H &quot;Content-Type: application/json&quot; -d @file], or install a recent version starting with <a href="https://curl.se/"><u><span style="color: #0563c1">curl.se</span></u></a>.</p>
 <p>In <em>[PowerShell]</em>, you must enter <em>[curl.exe]</em>, not <em>[curl]</em>: In <em>[PowerShell]</em>, <em>[curl]</em> is an alias for another command (<em>[Invoke-WebRequest]</em>), which does not include the options from <em>[curl]</em>. The command prompt (<em>[cmd]</em>) does not have this issue.</p>
 
 
