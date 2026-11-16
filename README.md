@@ -4,7 +4,7 @@
 
 This course teaches you how to write a **native Android mobile** app using the [Kotlin](https://kotlinlang.org) 2.2 and [Jetpack Compose](https://developer.android.com/compose), Android’s declarative UI library: an app whose screens are rendered **on the phone** based on JSON data from a server.
 
-It follows the progression of the course [Step-by-Step Introduction to the Flutter Mobile Framework](https://stahe.github.io/en-flutter-etape-par-etape-sept-2026/) (which is itself modeled after the [React](https://stahe.github.io/react-etape-par-etape-sept-2026/), [Vue.js](https://stahe.github.io/vuejs-etape-par-etape-sept-2026/), and [Angular](https://stahe.github.io/angular-etape-par-etape-sept-2026/) courses): same structure, same 25 examples, same server, same case study, written in the Android style.
+It follows the progression of the course [Step-by-Step Introduction to the Flutter Mobile Framework](https://stahe.github.io/en-flutter-etape-par-etape-sept-2026/) (which is itself modeled after the [React](https://stahe.github.io/en-react-etape-par-etape-sept-2026/), [Vue.js](https://stahe.github.io/en-vuejs-etape-par-etape-sept-2026/), and [Angular](https://stahe.github.io/en-angular-etape-par-etape-sept-2026/) courses): same structure, same 25 examples, same server, same case study, written in the Android style.
 
 | Flutter Course | Kotlin Course |
 |---|---|
